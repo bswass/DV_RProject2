@@ -1,0 +1,18 @@
+{
+    "contents" : "require(\"jsonlite\")\nrequire(\"RCurl\")\n# Change the USER and PASS below to be your UTEid\ndf <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query=\"select * from yelpbusiness\"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDBF15DV.usuniversi01134.oraclecloud.internal', USER='cs329e_btb687', PASS='orcl_btb687', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE), ))\nsummary (df)",
+    "created" : 1443737625557.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4244933574",
+    "id" : "A4B5A96F",
+    "lastKnownWriteTime" : 1443737809,
+    "path" : "C:/DataViz/2.DataWrangling/02 Data Wrangling/datawrangling.R",
+    "project_path" : "02 Data Wrangling/datawrangling.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
