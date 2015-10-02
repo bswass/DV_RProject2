@@ -13,38 +13,38 @@ names(df) <- gsub("attributes", "attr", names(df))
 # Replace Ambience with Ambi
 names(df) <- gsub("Ambience", "Ambi", names(df))
 
-# Replace Ambience with Ambi
+# Replace Specialized with Spec
 names(df) <- gsub("Specialized", "Spec", names(df))
 
-# Replace Ambience with Ambi
+# Replace Dietary_Restrictions with DietRest
 names(df) <- gsub("Dietary_Restrictions", "DietRest", names(df))
 
-# Replace Ambience with Ambi
+# Replace Types with blank
 names(df) <- gsub("Types", "", names(df))
 
 # Replace Ambience with Ambi
 names(df) <- gsub("Hair__Spec", "HairSpec", names(df))
 
-# Replace Ambience with Ambi
+# Replace africanamerican with afam
 names(df) <- gsub("africanamerican", "afam", names(df))
 
-# Replace Ambience with Ambi
+# Replace Payment with PayBy
 names(df) <- gsub("Payment", "PayBy", names(df))
 
-# Replace Ambience with Ambi
+# Replace straightperms with st8perm
 names(df) <- gsub("straightperms", "st8perm", names(df))
 
-# Replace Ambience with Ambi
+# Replace Accessible with Access
 names(df) <- gsub("Accessible", "Access", names(df))
 
-# Replace Ambience with Ambi
+# Replace extensions with ext
 names(df) <- gsub("extensions", "ext", names(df))
 
 summary (df)
 
 str(df)
 
-measures <- c("latitude", "review_count", "stars", "attributes_Price_Range", "longitude") 
+measures <- c("latitude", "review_count", "stars", "attr_Price_Range", "longitude") 
 
 # Get rid of special characters in each column.
 # Google ASCII Table to understand the following:
