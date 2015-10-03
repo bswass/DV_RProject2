@@ -16,4 +16,4 @@ df %>% select(STARS, STATE, REVIEW_COUNT, ATTR_MUSIC_KARAOKE, ATTR_NOISE_LEVEL) 
 
 #df %>% filter(ATTR_GOOD_FOR_BREAKFAST != "null"| ATTR_GOOD_FOR_LUNCH != "null"| ATTR_GOOD_FOR_BRUNCH != "null"| ATTR_GOOD_FOR_DINNER != "null"| ATTR_GOOD_FOR_LATENIGHT != "null") %>% group_by(ATTR_GOOD_FOR_BREAKFAST, ATTR_GOOD_FOR_LUNCH, ATTR_GOOD_FOR_BRUNCH, ATTR_GOOD_FOR_DINNER, ATTR_GOOD_FOR_LATENIGHT) %>% summarize(avg = mean(STARS), n = n()) %>% ggplot(aes(x=avg, y=n)) + geom_point() + facet_wrap(~ATTR_GOOD_FOR_BREAKFAST + ATTR_GOOD_FOR_LUNCH)
   
-#df %>% mutate(star_percent = cume_dist(STARS)) %>% filter(star_percent >.50) %>% ggplot(aes(x=STARS, y=REVIEW_COUNT)) + geom_point()
+df %>% mutate(review_percent = cume_dist(REVIEW_COUNT)) %>% filter(OPEN!="null", ATTR_CATERS!="null") %>% ggplot(aes(x=review_percent, y=REVIEW_COUNT, color=ATTR_CATERS)) + geom_point() + facet_wrap(~OPEN)
