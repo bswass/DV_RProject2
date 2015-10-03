@@ -9,11 +9,10 @@ require(tidyr)
 require(dplyr)
 require(ggplot2)
 
-df %>% select(STARS, STATE, REVIEW_COUNT, ATTR_MUSIC_KARAOKE, ATTR_NOISE_LEVEL) %>% filter(ATTR_MUSIC_KARAOKE != "null", ATTR_NOISE_LEVEL != "null") %>% ggplot(aes(x=STARS, y=REVIEW_COUNT, color=ATTR_NOISE_LEVEL)) + geom_point() + facet_wrap(~ATTR_MUSIC_KARAOKE)
+df %>% select(STARS, REVIEW_COUNT, ATTR_MUSIC_KARAOKE, ATTR_NOISE_LEVEL) %>% filter(ATTR_MUSIC_KARAOKE != "null", ATTR_NOISE_LEVEL != "null") %>% ggplot(aes(x=STARS, y=REVIEW_COUNT, color=ATTR_NOISE_LEVEL)) + geom_point() + facet_wrap(~ATTR_MUSIC_KARAOKE)
 
 df %>% select(STARS, STATE, REVIEW_COUNT, ATTR_MUSIC_KARAOKE, ATTR_NOISE_LEVEL) %>% filter(ATTR_MUSIC_KARAOKE != "null", ATTR_NOISE_LEVEL != "null") %>% ggplot(aes(x=ATTR_NOISE_LEVEL, y=REVIEW_COUNT, color=STARS)) + geom_point() + facet_wrap(~ATTR_MUSIC_KARAOKE)
-
-
-#df %>% filter(ATTR_GOOD_FOR_BREAKFAST != "null"| ATTR_GOOD_FOR_LUNCH != "null"| ATTR_GOOD_FOR_BRUNCH != "null"| ATTR_GOOD_FOR_DINNER != "null"| ATTR_GOOD_FOR_LATENIGHT != "null") %>% group_by(ATTR_GOOD_FOR_BREAKFAST, ATTR_GOOD_FOR_LUNCH, ATTR_GOOD_FOR_BRUNCH, ATTR_GOOD_FOR_DINNER, ATTR_GOOD_FOR_LATENIGHT) %>% summarize(avg = mean(STARS), n = n()) %>% ggplot(aes(x=avg, y=n)) + geom_point() + facet_wrap(~ATTR_GOOD_FOR_BREAKFAST + ATTR_GOOD_FOR_LUNCH)
   
 df %>% mutate(review_percent = cume_dist(REVIEW_COUNT)) %>% filter(OPEN!="null", ATTR_CATERS!="null") %>% ggplot(aes(x=review_percent, y=REVIEW_COUNT, color=ATTR_CATERS)) + geom_point() + facet_wrap(~OPEN)
+
+df %>% filter(CITY!="null", ATTR_ALCOHOL!="null") %>% group_by(CITY, STATE) %>% summarize(Star_Average=mean(STARS), Num_of_Businesses_per_City=n()) %>% ggplot(aes(x=Star_Average, y=Num_of_Businesses_per_City, color=STATE)) + geom_point()
