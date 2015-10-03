@@ -1,10 +1,11 @@
 Yelp Business Reviews
 ==================
 
-```{r}
-source("C:/Users/Chris/Desktop/DataVisualization/DV_RProject2/02 Data Wrangling/createSQLtbl.R", echo = TRUE)
-```
 
 ```{r}
 source("C:/Users/Chris/Desktop/DataVisualization/DV_RProject2/02 Data Wrangling/datawrangling.R", echo = TRUE)
+```
+
+```{r}
+source("C:/Users/Chris/Desktop/DataVisualization/DV_RProject2/02 Data Wrangling/createSQLtbl.R", echo = TRUE)
 ```
