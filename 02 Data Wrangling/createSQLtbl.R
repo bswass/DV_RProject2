@@ -1,4 +1,4 @@
-setwd("C:/DataViz/2.DataWrangling/01 Data")
+setwd("C:/Users/Chris/Desktop/DataVisualization/DV_RProject2/01 Data")
 
 file_path <- "yelp_academic_dataset_business.csv"
 
@@ -40,9 +40,8 @@ names(df) <- gsub("Accessible", "Access", names(df))
 # Replace extensions with ext
 names(df) <- gsub("extensions", "ext", names(df))
 
-summary (df)
-
-str(df)
+#summary (df)
+#str(df)
 
 measures <- c("latitude", "review_count", "stars", "attr_Price_Range", "longitude") 
 
